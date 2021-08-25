@@ -62,4 +62,14 @@ export const registerUser =
     dispatch(setIsAuth(true));
   };
 
+export const loginUser =
+  (userObj: IUserObj): Thunk =>
+  async (dispatch) => {
+    dispatch(setIsAuth(false));
+    const { email, password } = userObj;
+    const currentUser = userAPI.login(email, password);
+    dispatch(setCurrentUser(currentUser));
+    dispatch(setIsAuth(true));
+  };
+
 type ActionTypes = IRegisterUser | ISetIsAuth | ISetCurrentUser;

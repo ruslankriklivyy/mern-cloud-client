@@ -1,17 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-import Registration from './components/Registration';
-import Navbar from './components/Navbar';
+import { Navbar, AppRouter } from './components';
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Navbar />
-        <Switch>
-          <Route path="/registration" component={Registration} />
-        </Switch>
+        <AppRouter />
       </div>
     </Router>
   );

@@ -13,4 +13,12 @@ export const userAPI = {
       return e;
     }
   },
+  async login(email: String, password: String) {
+    try {
+      const res = await $host.post('auth/login', { email, password });
+      return res;
+    } catch (e) {
+      return e;
+    }
+  },
 };
